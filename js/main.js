@@ -64,9 +64,16 @@ class App {
 	 */
 	async #getUser(id) {
 		const url = `https://gorest.co.in/public/v2/users/${id}`;
-
+		// prettier-ignore
+		const config = {
+			method: 'GET',
+			headers: {
+				'Content-Type' : 'application/json',
+				'Authorization': `Bearer ${this.#apiToken}`,
+			},
+		};
 		try {
-			const response = await fetch(url);
+			const response = await fetch(url, config);
 
 			if (response.status === 200) {
 				const user = await response.json();
@@ -86,9 +93,17 @@ class App {
 	 */
 	async #getAllUsers() {
 		const url = 'https://gorest.co.in/public/v2/users';
+		// prettier-ignore
+		const config = {
+			method: 'GET',
+			headers: {
+				'Content-Type' : 'application/json',
+				'Authorization': `Bearer ${this.#apiToken}`,
+			},
+		};
 
 		try {
-			const response = await fetch(url);
+			const response = await fetch(url, config);
 			const users = await response.json();
 
 			if (!users) {
@@ -145,6 +160,7 @@ class App {
 		const config = {
             method: 'PUT',
             headers: {
+				'Content-Type' : 'application/json',
                 'Authorization' : `Bearer ${this.#apiToken}`
             },
             body: JSON.stringify(updatedInfoObj)
@@ -152,7 +168,6 @@ class App {
 
 		try {
 			const response = await fetch(url, config);
-			console.log(response);
 
 			if (response.status === 200) {
 				this.#displaySuccess(`Status 200: Registro atualizado com sucesso.`);
