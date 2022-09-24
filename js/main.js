@@ -192,6 +192,7 @@ class App {
 		const config = {
             method: 'DELETE',
             headers: {
+				'Content-Type' : 'application/json',
                 'Authorization' : `Bearer ${this.#apiToken}`
             },
         };
