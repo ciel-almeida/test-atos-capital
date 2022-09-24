@@ -1,0 +1,248 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.container {
+	width: max-content;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	/* border: 1px solid red; */
+	padding: 0 1rem;
+}
+
+.overlay {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.322);
+	display: none;
+}
+
+.overlay.overlay--active {
+	display: block;
+}
+/* ========================
+========= BUTTONS =========
+========================= */
+.btn__insert {
+	flex-grow: 0;
+	font-size: 1rem;
+	display: inline-block;
+	align-self: flex-start;
+	padding: 1rem;
+	background-color: blue;
+	color: white;
+	border: none;
+	cursor: pointer;
+	border-radius: 0.2rem;
+	font-weight: bold;
+}
+
+.table__btn {
+	font-size: 1rem;
+	padding: 0.1rem 0.6rem;
+	cursor: pointer;
+}
+
+.form__btn,
+.delete__btn {
+	font-size: 1.2rem;
+	padding: 0.5rem 1rem;
+}
+
+.form__btn--confirm {
+	background-color: blue;
+	color: white;
+	border: none;
+}
+
+.delete__btn--delete {
+	background-color: blue;
+	color: white;
+	border: none;
+}
+
+/* ========================
+========= HEADER ==========
+========================= */
+.header {
+	width: 100%;
+}
+.header__title {
+	font-size: 3rem;
+	text-align: center;
+	margin: 1rem 0;
+}
+
+.header__wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	gap: 2rem;
+	margin-bottom: 1rem;
+}
+
+/* ========================
+===== STATUS MESSAGE ======
+========================= */
+.message {
+	flex-grow: 1;
+	padding: 0.8rem;
+	border-radius: 0.2rem;
+	border: 0.5px solid rgb(101, 101, 101);
+	opacity: 0;
+	transition: opacity 0.4s ease;
+}
+
+/* ========================
+========= TABLE ===========
+========================= */
+.table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table__header,
+.table__data {
+	padding: 1rem;
+}
+
+.table__header {
+	border: 2px solid #dddddd;
+	text-transform: uppercase;
+	background-color: rgb(43, 43, 43);
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.table__data {
+	text-align: left;
+	font-size: 1.2rem;
+}
+
+.table__data--actions {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.table__data-box .table__row:nth-child(even) {
+	background-color: #f8f6e1;
+}
+
+.table__data-box .table__row:hover {
+	background-color: rgb(216, 214, 214);
+}
+
+/* ========================
+========== FORM ===========
+========================= */
+.form {
+	width: 400px;
+	display: grid;
+	grid-template-columns: 1fr;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	background-color: #ffffff;
+	border-radius: 0.2rem;
+	padding: 3rem;
+	transform: translate(-50%, -50%) scaleY(0);
+	transform-origin: top;
+	opacity: 0;
+	transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.form.form--active {
+	/* display: block; */
+	opacity: 1;
+	transform: translate(-50%, -50%) scaleY(1);
+}
+
+.form__title {
+	text-align: center;
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+}
+
+.form__input-wrapper {
+	display: flex;
+	gap: 10%;
+	margin-bottom: 2rem;
+}
+
+.form__label {
+	font-size: 1rem;
+	margin-bottom: 0.2rem;
+}
+
+.form__input {
+	margin-bottom: 1rem;
+	padding: 0.6rem;
+	font-size: 1rem;
+}
+.form__input:placeholder-shown {
+	color: rgba(0, 0, 0, 0.426);
+}
+.form__select-container {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+}
+
+.form__select {
+	padding: 0.4rem;
+}
+
+.form__btn-box {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+/* ========================
+=== DELETE CONFIRMATION ===
+========================= */
+
+.delete {
+	width: max-content;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	border-radius: 4px;
+	padding: 2rem;
+	transform: translate(-50%, -50%);
+	background-color: rgb(255, 255, 255);
+	display: none;
+}
+
+.delete__title {
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.delete__btn-box {
+	display: flex;
+	gap: 5px;
+	justify-content: center;
+}
+
+.delete.delete--active {
+	display: block;
+}

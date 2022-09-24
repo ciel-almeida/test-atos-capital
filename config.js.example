@@ -1,0 +1,16 @@
+/**
+ * In order to make the application work, go to the site
+ * https://gorest.co.in/my-account/access-tokens and get a personal acess token.
+ *
+ * Assign your personal token as a value of the variable ACCESS_TOKEN.
+ *
+ * Rename this file from config.js.example to config.js
+ *
+ * Open the index.html in the browser and the application should be running
+ * with your own personal token now.
+ */
+
+// Example:
+// export const ACCESS_TOKEN = 'b09ojfaoslkm325098as090392i5213kjlkajsf09815214124124109faskn';
+
+export const ACCESS_TOKEN = '';

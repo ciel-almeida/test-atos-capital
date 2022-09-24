@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>GoREST Api - User Interface</title>
+
+		<!-- Styles -->
+		<link rel="stylesheet" href="./css/style.css" />
+		<!-- Scripts -->
+		<script defer type="module" src="js/main.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Page Header -->
+			<header class="header">
+				<h1 class="header__title">GoREST API</h1>
+				<div class="header__wrapper">
+					<!-- New Registry Button -->
+					<button class="btn__insert">Novo Registro</button>
+
+					<!-- Message Box -->
+					<div class="message">
+						<p class="message__parag"></p>
+					</div>
+				</div>
+			</header>
+
+			<!-- Table of Users -->
+			<table class="table">
+				<thead class="table__header-box">
+					<tr>
+						<th class="table__header">Id</th>
+						<th class="table__header">Nome</th>
+						<th class="table__header">Email</th>
+						<th class="table__header">Ações</th>
+					</tr>
+				</thead>
+				<tbody class="table__data-box"></tbody>
+			</table>
+
+			<div class="overlay"></div>
+
+			<!-- New Registry / Edit Registry Form -->
+			<div class="modal">
+				<form class="form" action="#">
+					<h3 class="form__title">Registro</h3>
+					<input class="form__input" type="hidden" id="id" name="id" value="" />
+					<label class="form__label" for="name">Nome:</label>
+					<input
+						class="form__input"
+						type="text"
+						name="name"
+						id="name"
+						placeholder="Maria Santos"
+						required
+					/>
+
+					<label class="form__label" for="Email">Email:</label>
+					<input
+						class="form__input"
+						type="email"
+						name="email"
+						id="email"
+						placeholder="maria.santos@email.com"
+						required
+					/>
+
+					<div class="form__input-wrapper">
+						<div class="form__select-container">
+							<label class="form__label" for="gender">Gênero:</label>
+							<select class="form__select" name="gender" id="gender" required>
+								<option value="male">Masculino</option>
+								<option value="female">Feminino</option>
+							</select>
+						</div>
+						<div class="form__select-container">
+							<label class="form__label" for="status">Situação:</label>
+							<select class="form__select" name="status" id="status" required>
+								<option value="active">Ativo</option>
+								<option value="inactive">Inativo</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form__btn-box">
+						<button class="form__btn form__btn--confirm">Registrar</button>
+						<button class="form__btn form__btn--cancel">Fechar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Delete Confirmation Box -->
+		<div class="delete">
+			<h3 class="delete__title">Tem certeza que excluir o registro <span></span>?</h3>
+			<div class="delete__btn-box">
+				<button class="delete__btn delete__btn--delete">Deletar</button>
+				<button class="delete__btn delete__btn--cancel">Cancelar</button>
+			</div>
+		</div>
+	</body>
+</html>
